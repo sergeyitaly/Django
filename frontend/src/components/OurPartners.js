@@ -11,8 +11,8 @@ import OdinLeatherGoods from "../Img/PartnersImages/OdinLeatherGoods.svg"
 function OurPartners () {
 
     return (
-        <Container style={{padding: "40px"}} className="">
-            <h2>Our Partners</h2>
+        <Container style={{padding: "40px"}} className="py-5">
+            <h2 style={{textAlign: "center"}} className="pb-4">Our Partners</h2>
             <Row style={{alignItems: "center"}} mg={5}>
                 <Col>
                     <a href="https://craftandlore.com">

@@ -1,0 +1,66 @@
+
+.container-fluid {
+    padding: 0px;
+    & .banner-style {
+        position: relative;
+
+    }
+    & .img-container {
+        background-color: black;
+        & .img-banner {
+            opacity: 0.8;
+            width: 100%;
+        }
+    }  
+}
+
+.form-check {
+    & .form-check-input {
+        height: 0px;
+        border: 1px solid #828C76;
+        padding: 7px;
+    }
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: #828C76;
+}
+
+
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    & .txt-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        & .txt-overlay {
+            font-weight: bold;
+            color: white;
+        }
+    }
+}
+
+.form-style {
+    width: 350px;
+    border-radius: 20px;
+    background-color: #2A1D18;
+    & .form-control {
+        border: none;
+        color: white;
+        background: none;
+        outline: none;
+    }
+}
+

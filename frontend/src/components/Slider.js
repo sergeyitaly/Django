@@ -21,7 +21,7 @@ function Slider () {
                 <Carousel.Caption>
                     <h3 className="slide-title">Lorem Ipsum is simply dummy</h3>
                     <p className="slide-text">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    <a href="shop"><Button>Shop Now</Button></a>
+                    <a href="shop"><Button className="common-btn">Shop Now</Button></a>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -33,7 +33,7 @@ function Slider () {
                 <Carousel.Caption>
                     <h3 className="slide-title">Lorem Ipsum is simply dummy</h3>
                     <p className="slide-text">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    <a href="shop"><Button>Shop Now</Button></a>
+                    <a href="shop"><Button className="common-btn">Shop Now</Button></a>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -45,7 +45,7 @@ function Slider () {
                 <Carousel.Caption>
                     <h3 className="slide-title">Lorem Ipsum is simply dummy</h3>
                     <p className="slide-text">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    <a href="shop"><Button>Shop Now</Button></a>
+                    <a href="shop"><Button className="common-btn">Shop Now</Button></a>
                 </Carousel.Caption>
             </Carousel.Item>
             </Carousel>

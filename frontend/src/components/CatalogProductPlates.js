@@ -11,6 +11,7 @@ import LeatherNotes from "../Img/CatalogImages/CatalogLeatherNotes.png"
 import LeatherPhoneCases from "../Img/CatalogImages/CatalogLeatherPhoneCases.png"
 import LeatherWatchStraps from "../Img/CatalogImages/CatalogLeatherWatchStraps.png"
 import LeatherAccessories from "../Img/CatalogImages/CatalogLeatherAccessories.png"
+
 import { Link } from "react-router-dom";
 
 function CatalogPlates () {
@@ -18,20 +19,20 @@ function CatalogPlates () {
     return (
 
         <Container fluid className="">
-              <Container className="py-5">
-                  <Row xs={2}  md={2} xl={3}  className="g-5">
+            <Container className="py-5">
+               <Row xs={2}  md={2} xl={3}  className="g-5"> 
                     <Col>
-                      <Link to="wallets">
-                          <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
-                              <CardImg className="d-block w-100" variant="center" src={LeatherWallets}/>
-                              <Card.ImgOverlay>
-                                  <Card.Title>Wallets</Card.Title>
-                              </Card.ImgOverlay>
-                          </Card>
-                      </Link>
+                        <Link to={`/shop/wallets`}>
+                            <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
+                                <CardImg className="d-block w-100" variant="center" src={LeatherWallets}/>
+                                <Card.ImgOverlay>
+                                    <Card.Title>Wallets</Card.Title>
+                                </Card.ImgOverlay>
+                            </Card>
+                        </Link>
                     </Col>
                     <Col>
-                      <Link to="bags">
+                      <Link to={`/shop/bags`}>
                           <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                               <CardImg className="d-block w-100" variant="center" src={LeatherBags}/>
                               <Card.ImgOverlay>
@@ -41,7 +42,7 @@ function CatalogPlates () {
                       </Link>
                     </Col>
                     <Col>
-                      <Link to="belts">
+                      <Link to={`/shop/belts`}>
                           <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                               <CardImg className="d-block w-100" variant="center" src={LeatherBelts}/>
                               <Card.ImgOverlay>
@@ -51,7 +52,7 @@ function CatalogPlates () {
                       </Link>
                     </Col>
                     <Col>
-                      <Link to="keyKedges">
+                      <Link to={`/shop/keykedges`}>
                           <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                               <CardImg className="d-block w-100" variant="center" src={LeatherKedges}/>
                               <Card.ImgOverlay>
@@ -61,7 +62,7 @@ function CatalogPlates () {
                       </Link>
                     </Col>
                     <Col>
-                      <Link to="watchStraps">
+                      <Link to={`/shop/watchStraps`}>
                           <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                               <CardImg className="d-block w-100" variant="center" src={LeatherWatchStraps}/>
                               <Card.ImgOverlay>
@@ -71,7 +72,7 @@ function CatalogPlates () {
                       </Link>
                     </Col>
                     <Col>
-                      <Link to="phoneCases">
+                      <Link to={`/shop/phoneCases`}>
                           <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                               <CardImg className="d-block w-100" variant="center" src={LeatherPhoneCases}/>
                               <Card.ImgOverlay>
@@ -81,7 +82,7 @@ function CatalogPlates () {
                       </Link>
                     </Col>
                     <Col>
-                      <Link to="bracelets">
+                      <Link to={`/shop/bracelets`}>
                           <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                               <CardImg className="d-block w-100" variant="center" src={LeatherBracelets}/>
                               <Card.ImgOverlay>
@@ -91,7 +92,7 @@ function CatalogPlates () {
                       </Link>
                     </Col>
                     <Col>
-                      <Link to="leatherFieldNotes">
+                      <Link to={`/shop/fieldsNotesCovers`}>
                           <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                               <CardImg className="d-block w-100" variant="center" src={LeatherNotes}/>
                               <Card.ImgOverlay>
@@ -101,7 +102,7 @@ function CatalogPlates () {
                       </Link>
                     </Col>
                     <Col>
-                      <Link to="accessories">
+                      <Link to={`/shop/accessories`}>
                           <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                               <CardImg className="d-block w-100" variant="center" src={LeatherAccessories}/>
                               <Card.ImgOverlay>

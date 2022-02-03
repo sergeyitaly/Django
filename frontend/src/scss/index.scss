@@ -13,10 +13,19 @@
         color: #828C76;
         text-transform: uppercase;
     }
+
+    li {
+        list-style-type: none;
+        padding-bottom: 10px;
+    }
     
     h1 {
         font-weight: 700;
         font-size: 50px;
+    }
+
+    h2 {
+        font-weight: 700;
     }
 
     p {
@@ -34,8 +43,15 @@
                 font-size: 24px;
                 gap: 65px;
             }
+            & .nav-link:hover {
+                color: white;
+            }
+            
         }
     }
+
+
+    
 
     .search-block {
         display: flex;
@@ -91,6 +107,18 @@
         background: none;
         color: white;
     }
+
+    .form-control:focus {
+        box-shadow: none;
+    }
+
+    .offcanvas-header {
+        & .btn-close {
+            background-color: none;
+        }
+    }
+    
+    
     
     .container {
         max-width: 1640px;
@@ -158,14 +186,39 @@
     }
 
     Button {
-        background-color: #828C76;
         text-transform: uppercase;
         font-weight: bold;
         font-size: 24px;
         border-radius: 10px;
         border: none;
+    }
+
+    .subscribe-btn {
+        background-color: #828C76;
+        width: 200px;
+        border-radius: 7px;
+    }
+
+    .common-btn {
+        background-color: #828C76;
         width: 300px;
-        height: 80px;
+        height: 70px;
+        border-radius: 7px;
+    }
+
+    .btn-primary:focus {
+        box-shadow: none;
+        background-color: #41463b;
+    }
+
+    .btn-primary:hover {
+        background-color: #41463b;
+        color: #110B09;
+    }
+
+    .btn-primary:active:focus {
+        background-color: #2A1D18;
+        box-shadow: none;
     }
 
     .card {
