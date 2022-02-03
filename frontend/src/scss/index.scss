@@ -1,0 +1,207 @@
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800,900);
+
+:root {
+
+    * {
+        font-family: Montserrat;
+    }
+
+    body {
+        margin: 0;
+        background: #2A1D18;
+        color: #828C76;
+        text-transform: uppercase;
+    }
+    
+    h1 {
+        font-weight: 700;
+        font-size: 50px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+    }
+    
+    .navbar {
+        background: #110B09;
+        & .navbar-nav {
+            & .nav-link { 
+                display: flex;
+                color: #828C76;
+                font-weight: bold;
+                font-size: 24px;
+                gap: 65px;
+            }
+        }
+    }
+
+    .search-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        &:hover {
+            border-radius: 40px;
+            border: solid 2px;
+        }
+        &:hover > .input-txt {
+            width: 240px;
+            padding: 0 6px;
+        }
+        & .input-txt {
+            border-radius: 30px;
+            width: 45px;
+            transition: all 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        & .search-btn {
+            background: #110B09;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+            color: white;
+            text-decoration:none;
+        }
+    }
+
+    .input-block {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 27%;
+        gap: 30px;
+        & .email-input {
+            border: solid 3px;
+            border-color: #828C76;
+            color: white;
+            background: none;
+            outline: none;
+        }
+    }
+
+    input {
+        border: 0px;
+        padding: 0.5rem;
+        outline: none;
+        height: 40px;
+        border-radius: 5px;
+        
+        border-color: #828C76;
+        background: none;
+        color: white;
+    }
+    
+    .container {
+        max-width: 1640px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+     
+
+    .carousel {
+        border-radius: 30px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        & .carousel-inner {
+            border-radius: 30px;
+        }
+    }
+
+    .content-style {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        color: white;
+        background: rgba(0,0,0,.4);
+        --webkit-filter: blur(0px) saturate(2);
+        & .background-shadow{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80%;
+            width: 50%;
+            background: rgba(0,0,0,.6);
+            --webkit-filter: blur(0px) saturate(2); 
+        }
+    }
+
+    span {
+        font-size: 1.2rem;
+    }
+
+    & .img-slide {
+        height: 50rem;
+    } 
+    
+    .carousel-caption {
+        top: 30%;
+        height: 50%;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        & .slide-title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        & .slide-text {
+            font-size: 20px;
+            font-weight: 500;
+            width: 70%;
+        }
+    }
+
+    Button {
+        background-color: #828C76;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+        border-radius: 10px;
+        border: none;
+        width: 300px;
+        height: 80px;
+    }
+
+    .card {
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        &:hover {
+            box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.06);
+            transform: translateY(-5px);
+        }
+        & .card-img-overlay {
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            &:hover {
+                background: rgba(0,0,0,.4);
+            }
+        }
+        & .card-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+
+
+    .coupon-text-container {
+        width: 50%;
+
+    }
+
+    @media (min-width: 1200px){
+        .g-custom {
+            padding: auto;
+        }
+    }
+
+}
