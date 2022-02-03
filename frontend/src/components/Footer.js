@@ -39,14 +39,16 @@ function Footer () {
                         <p style={{fontSize: "14px"}}>Copyright 2021 © Leather Handmade. All rights reserved.</p>
                     </div>
                     <div className="footer-navigation">
-                        <a href="#" className="navigation-txt">CUSTOMER SERVICE</a>
-                        <a href="#" className="navigation-txt">SHIPPING</a>
-                        <a href="#" className="navigation-txt">RETURN, ECHANGE, ISSUES</a>
-                        <a href="#" className="navigation-txt">WHOLESALE &amp; BULK ORDERS</a>
-                        <a href="#" className="navigation-txt">CONTACT</a>
-                        <a href="#" className="navigation-txt">JOURNAL</a>
-                        <a href="/" className="navigation-txt">Home</a>
-                        <a href="shop" className="navigation-txt">SHOP</a>
+                        <ul>
+                            <li><a href="#" className="navigation-txt footer-link">CUSTOMER SERVICE</a></li>
+                            <li><a href="#" className="navigation-txt footer-link">SHIPPING</a></li>
+                            <li><a href="#" className="navigation-txt footer-link">RETURN, ECHANGE, ISSUES</a></li>
+                            <li><a href="#" className="navigation-txt footer-link">WHOLESALE &amp; BULK ORDERS</a></li>
+                            <li><a href="#" className="navigation-txt footer-link">CONTACT</a></li>
+                            <li><a href="#" className="navigation-txt footer-link">JOURNAL</a></li>
+                            <li><a href="/" className="navigation-txt footer-link">Home</a></li>
+                            <li><a href="shop" className="navigation-txt footer-link">SHOP</a></li>
+                        </ul>
                     </div>
                     <div className="footer-coupon">
                         <div className="coupon-container">
@@ -59,7 +61,7 @@ function Footer () {
                                 type="email"
                                 placeholder="YOUR@EMAIL.COM"
                                 />
-                            <Button style={{width: "12rem", height: "3rem", borderRadius: "5px"}}><span>Subscribe</span></Button>
+                            <Button className="subscribe-btn"><span>Subscribe</span></Button>
                         </Form>
                     </div>
                 </Row>

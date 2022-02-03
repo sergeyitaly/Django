@@ -1,10 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import DakotaBifoldWallet from "../Img/WalletProductsImages/DakotaBifoldWallet.png"
-import DenverBillfoldWallet from "../Img/WalletProductsImages/DenverBillfoldWallet.png"
-import RyderReserveTrifoldWallet from "../Img/WalletProductsImages/RyderReserveTrifoldWallet.png"
 
 import "swiper/css";
 import "swiper/css/free-mode"
@@ -18,11 +14,9 @@ import SwiperCore, {
   FreeMode,Navigation,Thumbs,Pagination
 } from 'swiper';
 
-
-
 SwiperCore.use([FreeMode,Navigation,Thumbs,Pagination]);
 
-export default function App() {
+function ProductSlider(props) {
   
   
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -32,26 +26,28 @@ export default function App() {
     <>
         <Swiper style={{'--swiper-navigation-color': '#fff','--swiper-pagination-color': '#fff', borderRadius: "10px"}} slidesPerView={1} spaceBetween={10} loop={true} pagination={{"clickable":true}} navigation={true} thumbs={{ swiper: thumbsSwiper }} className="mySwiper2">
             <SwiperSlide>
-                <img src={DakotaBifoldWallet} />
+                <img src={props.image} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={DenverBillfoldWallet} />
+                <img src={props.image2} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={RyderReserveTrifoldWallet} />
+                <img src={props.image3} />
             </SwiperSlide>
         </Swiper>
         <Swiper onSwiper={setThumbsSwiper} spaceBetween={10} slidesPerView={4} freeMode={true} watchSlidesProgress={true} className="mySwiper">
             <SwiperSlide>
-                <img src={DakotaBifoldWallet} />
+                <img src={props.image} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={DenverBillfoldWallet} />
+                <img src={props.image2} />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={RyderReserveTrifoldWallet} />
+                <img src={props.image3} />
             </SwiperSlide>
         </Swiper>
     </>
   )
 }
+
+export default ProductSlider

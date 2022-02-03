@@ -18,7 +18,7 @@ const Home = () => {
       <Parallax imgsrc={LeatherWallet} height="500px">
           <div style={{position: "absolute"}} className="content-style">
               <h1 style={{width: "30%"}} className="text-center mb-5">BEST LEATHER GOODS FOR YOU</h1>
-              <a href="shop"><Button className="btn btn-default"><span style={{color: "white", fontSize: "24px"}}>Shop Now</span></Button></a>
+              <a href="shop"><Button className="btn btn-default common-btn"><span style={{fontSize: "24px"}}>Shop Now</span></Button></a>
           </div>
       </Parallax>
       <QuickCatalogPlates/>
@@ -31,7 +31,7 @@ const Home = () => {
           <div style={{position: "absolute", background: "none"}} className="content-style">
             <div className="background-shadow">
               <h1 className="text-center mb-5 px-1" >FOR THE LOVE OF SIMPLE UNASSUMING THINGS</h1>
-              <a href="shop"><Button>Shop Now</Button></a>
+              <a href="shop"><Button className="common-btn">Shop Now</Button></a>
             </div>
           </div>
       </Parallax>

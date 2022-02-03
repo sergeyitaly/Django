@@ -6,11 +6,11 @@ function BannerConstruct (props) {
 
         <div className="banner-style">
             <div className="img-container">
-                <img className="img-banner" src={props.banner}/> 
+                <img className="img-banner" src={props.bannerImg}/> 
             </div>
             <div className="overlay-container">
                 <div className="txt-container">
-                    <h1 className="txt-overlay">{props.titleBanner}</h1>
+                    <h1 className="txt-overlay">{props.bannerTitle}</h1>
                 </div>
             </div>
         </div> 

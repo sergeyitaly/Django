@@ -18,7 +18,7 @@ function QuickPlates () {
             <Container className="py-5">
             <Row xs={1} md={3} className="g-5">
               <Col>
-                <Link to="bags">
+                <Link to={`/shop/bags`}>
                     <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                         <CardImg className="d-block w-100" variant="center" src={LeatherBags}/>
                         <Card.ImgOverlay>
@@ -28,7 +28,7 @@ function QuickPlates () {
                 </Link>
               </Col>
               <Col>
-                <Link to="belts">
+                <Link to={`/shop/belts`}>
                     <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                         <CardImg className="d-block w-100" variant="center" src={LeatherBelts}/>
                         <Card.ImgOverlay>
@@ -38,7 +38,7 @@ function QuickPlates () {
                 </Link>
               </Col>
               <Col>
-                <Link to="wallets">
+                <Link to={`/shop/wallets`}>
                     <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                         <CardImg className="d-block w-100" variant="center" src={LeatherWallets}/>
                         <Card.ImgOverlay>
@@ -48,7 +48,7 @@ function QuickPlates () {
                 </Link>
               </Col>
               <Col>
-                <Link to="keyKedges">
+                <Link to={`/shop/accessories`}>
                     <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                         <CardImg className="d-block w-100" variant="center" src={LeatherAccessories}/>
                         <Card.ImgOverlay>
@@ -58,7 +58,7 @@ function QuickPlates () {
                 </Link>
               </Col>
               <Col>
-                <Link to="watchStraps">
+                <Link to={`/shop/bestSellers`}>
                     <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                         <CardImg className="d-block w-100" variant="center" src={BestSellers}/>
                         <Card.ImgOverlay>
@@ -68,7 +68,7 @@ function QuickPlates () {
                 </Link>
               </Col>
               <Col>
-                <Link to="phoneCases">
+                <Link to={`/shop/newProducts`}>
                     <Card className="overflow-hidden" style={{border: "none", borderRadius: "1rem", background: "none"}}>
                         <CardImg className="d-block w-100" variant="center" src={NewProducts}/>
                         <Card.ImgOverlay>
@@ -94,7 +94,7 @@ function QuickPlates () {
                         type="email"
                         placeholder="YOUR@EMAIL.COM"
                         />
-                        <Button style={{width: "12rem", height: "3rem", borderRadius: "5px"}}><span>Subscribe</span></Button>
+                        <Button className="subscribe-btn"><span>Subscribe</span></Button>
                     </Form>
                 </Stack>
             </Container>
