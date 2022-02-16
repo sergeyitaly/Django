@@ -17,6 +17,7 @@ import PageProduct from "./pages/PageProduct"
 
 import Login from "./pages/Login";
 import CreateAccount from "./pages/CreateAccount";
+import ActivateAccount from "./pages/ActivateAccount";
 
 function App() {
   
@@ -34,6 +35,7 @@ function App() {
         <Route path="shop/:link/:id" element={<PageProduct />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/login/create-account" element={<CreateAccount />}/>
+        <Route path="/activate/:uid/:token" element={<ActivateAccount />}/>
       </Routes>
       <Footer/>
     </div>

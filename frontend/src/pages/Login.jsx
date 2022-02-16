@@ -21,21 +21,16 @@ export default function Login () {
        useEffect(() => {
         if (access) {
                 fetch('/api/user',
-                    {headers: {
-                      'Content-Type': 'application/json;charset=utf-8',
-                      'Authorization': `Bearer ${access}`,
-                    },
-                  }
+                    {headers: {'Content-Type': 'application/json;charset=utf-8',
+                      'Authorization': `Bearer ${access}`,},}
                 )
          
            .then(response => {
              if (response.ok) {
                return response.json()
-             } else {
-
-                     if (response.status === 401) { throw Error('refresh')}
-               throw Error(`Error is here: code ${response.status}`)
-             }
+             } else {if (response.status === 401) { throw Error('refresh')}
+                    throw Error(`Error is here: code ${response.status}`)
+                     }
            })
            .then(({data}) => {
              setEmail(data.formUsername)
@@ -57,9 +52,7 @@ export default function Login () {
                         '/api/token/refresh',
                         {
                         method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json',
-                               },
+                        headers: {'Content-Type': 'application/json;charset=utf-8',},
                         body: JSON.stringify({ refresh })
                       }
                     )

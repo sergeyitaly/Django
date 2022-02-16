@@ -32,6 +32,7 @@
     "universal-rxjs-ajax": "^2.0.4",
     "web-vitals": "^2.1.2"
   },
+  "proxy":"http://localhost:8000",
   "scripts": {
     "start": "react-scripts start",
     "dev": "snowpack dev",
