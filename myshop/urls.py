@@ -38,8 +38,6 @@ urlpatterns = [
     path('',include("accounts.urls")),
     path('',include("cart.urls")),
     #re_path(r'^(?:.*)/?$', TemplateView.as_view(template_name='index.html'))
- #   path('contact/', ContactFormView.as_view(), name='contact'),
-  #  path('login/', LoginUser.as_view(), name='login'),
 ]
 
 if settings.DEBUG:

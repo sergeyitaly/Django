@@ -32,10 +32,10 @@ class CustomTokenCreateSerializer(TokenCreateSerializer):
 
 class UserSerializer(ModelSerializer):
     password = serializers.CharField(style={'input_type':'password'}, write_only=True)
-    password2 = serializers.CharField(style={'input_type':'password'}, write_only=True)
+    re_password = serializers.CharField(style={'input_type':'re_password'}, write_only=True)
     class Meta:
          model = CustomUser
-         fields = ['email','username',  'password','password2']
+         fields = ['email','username',  'password','re_password']
          #extra_kwargs = {'password': {'write_only': True}}
 
     def save(self):
@@ -44,8 +44,8 @@ class UserSerializer(ModelSerializer):
             username = self.validated_data['username'],
         )
         password = self.validated_data['password']
-        password2 = self.validated_data['password2']
-        if password2 != password:
+        re_password = self.validated_data['re_password']
+        if re_password != password:
             raise serializers.ValidationError({'password': 'Passwords must match...'})
     
         new_customuser.set_password(password)

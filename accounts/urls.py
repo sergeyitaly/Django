@@ -9,7 +9,7 @@ urlpatterns = [
     path('api/token/obtain', TokenObtainPairView.as_view(), name='token_obtain'),
     path('api/token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('register/', views.registration_view, name='register'),
-    #path('register/', views.ActivateUser.as_view(({'get': 'list'})), name='activate'),
+    #path('activate/<uid>/<token>', views.ActivateUser.as_view({'get': 'activation'}), name='activation'),
+    #path('register/', views.registration_view, name='register'),
 ]
 

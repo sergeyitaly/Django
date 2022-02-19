@@ -1,4 +1,5 @@
 from urllib import response
+from django.shortcuts import redirect
 from rest_framework.generics import (ListCreateAPIView,RetrieveUpdateDestroyAPIView,)
 from accounts import permission
 from myshop.settings import REST_FRAMEWORK
@@ -29,7 +30,7 @@ class ActivateUser(UserViewSet):
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def login(request: Request):
     serializer = LoginRequestSerializer(data=request.data)
     if serializer.is_valid():
@@ -43,13 +44,12 @@ def login(request: Request):
         return Response(serializer.errors, status=400)
 
 class UserView(APIView):
-
     permission_classes= [IsAuthenticated]
     def get(self, request):
         return Response({'data': 'Booo! You are inside the account'})
 
-
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def registration_view(request):
     if request.method == 'POST':
         serializer= UserSerializer(data=request.data)

@@ -5,8 +5,8 @@
 5. Install python
 5. cd backend
 7. python -m pip install Django
-8. pip install django djangorestframework django-allauth djangorestframework-jwt whitenoise djoser django-rest-auth django-cors-headers Pillow django-admin-interface django-rest-knox django-admin-interface
-9. python manage.py runserver drf-yasg -U
+8. pip install django drf-yasg djangorestframework django-allauth djangorestframework-jwt whitenoise djoser django-rest-auth django-cors-headers Pillow django-admin-interface django-rest-knox django-admin-interface
+9. python manage.py runserver 
 10. npm start
 12. Go to http:/127.0.0.1:8000 and see main site page
 13. Go to http:/127.0.0.1:8000/admin/ (admin: super@user.com, pass: foo) and see admin page
@@ -15,3 +15,6 @@
 
 All data are saved in backend db.sqlite3. See them at admin panel.
 
+    "USER_ID_FIELD": "username",
+
+Для чого використовуються дайменшини.

@@ -18,6 +18,9 @@ import PageProduct from "./pages/PageProduct"
 import Login from "./pages/Login";
 import CreateAccount from "./pages/CreateAccount";
 import ActivateAccount from "./pages/ActivateAccount";
+import Account from "./pages/Account";
+import Resetpass from "./pages/Resetpass";
+import Reset from "./pages/Reset";
 
 function App() {
   
@@ -36,6 +39,9 @@ function App() {
         <Route path="/login" element={<Login />}/>
         <Route path="/login/create-account" element={<CreateAccount />}/>
         <Route path="/activate/:uid/:token" element={<ActivateAccount />}/>
+        <Route path="/login/account" element={<Account />}/>
+        <Route path="/login/account/reset" element={<Resetpass />}/>
+        <Route path="/password-reset/:uid/:token" element={<Reset />}/>
       </Routes>
       <Footer/>
     </div>

@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
-
 import "../scss/main.scss"
-
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
+import Axios from "axios";
+import { Link, useParams, useNavigate  } from "react-router-dom";
 
 export default function Login () {
        const [formPassword, setFormPassword] = useState()
@@ -12,11 +10,13 @@ export default function Login () {
        const [refresh, setRefresh] = useState(localStorage.getItem('refreshToken'))
        const [formUsername, setFormUsername] = useState()
        const [refreshRequired, setRefreshRequired] = useState(false)
-       const [ formemail, setEmail] = useState()
-       const [ dateJoined, setDateJoined] = useState('')
-       const [ error, setError] = useState()
+       const [dateJoined, setDateJoined] = useState('')
+       const [error, setError] = useState()
        const [loading, setLoading] = useState()
-       const [token, setToken] = useState()
+       const { uid, token } = useParams();
+       const history = useNavigate ();
+       const [formEmail, setFormEmail] = useState()
+
 
        useEffect(() => {
         if (access) {
@@ -33,8 +33,8 @@ export default function Login () {
                      }
            })
            .then(({data}) => {
-             setEmail(data.formUsername)
-             setDateJoined(data.date_joined)
+            setFormUsername(data.formUsername)
+            setDateJoined(data.date_joined)
             setError(null)
              })
              .catch(error => {
@@ -46,7 +46,7 @@ export default function Login () {
              }
             }, [access])
 
-             useEffect(() => {
+          useEffect(() => {
                     if (refreshRequired) {
                     fetch(
                         '/api/token/refresh',
@@ -76,36 +76,38 @@ export default function Login () {
                       })
                     }
                   }, [refreshRequired])
-       const submitHandler = e => {
+       const submitHandler = async (e) => {
                  e.preventDefault();
                 setLoading(true);
+                localStorage.setItem('username', formUsername);
+                console.log(formUsername);
                  fetch(
                      '/api/token/obtain',
                   {
                      method: 'POST',
                      headers: {'Content-Type': 'application/json;charset=utf-8'},
-                     body: JSON.stringify({
-                     username: formUsername,
-                     password: formPassword
-                     })
+                     body: JSON.stringify({username: formUsername,password: formPassword})
                   }
                  )
             .then(response => {
                      if (response.ok) {
-                       return response.json()
+                      return response.json()
                      } else {throw Error(`Maybe here: code ${response.status}`)}
                    })
-                        .then(({access, refresh}) => {
-                           localStorage.setItem('accessToken', access)
-                           setAccess(access)
-                            localStorage.setItem('refreshToken', refresh)
-                            setRefresh(refresh)
-                             setError(null)})
+            .then(({access, refresh}) => {
+                          localStorage.setItem('accessToken', access)
+                          setAccess(access)
+                          localStorage.setItem('refreshToken', refresh)
+                          setRefresh(refresh)
+                          window.location.replace('http://localhost:3000/login/account');
+                          setError(null)  
+                            })
            .catch(error => {
              console.log(error)
              setError('Ошибка, подробности в консоли')})
-         .finally(setLoading(false))
-        }
+           .finally(setLoading(false))}
+      
+ 
       
   return (
 
@@ -114,24 +116,28 @@ export default function Login () {
         <Container className="d-flex justify-content-center py-5 flex-column">
             <div className="d-flex flex-column align-items-center">
                 <h2 style={{fontWeight: "bold"}}>Login</h2>
-                <p style={{textTransform: "none"}}>Please enter your email and password:</p>
+                <p style={{textTransform: "none"}}>Please enter your username and password:</p>
             </div>
-            <Form className="d-flex flex-column align-items-center" onSubmit={submitHandler}>
+            <Form className="d-flex flex-column align-items-center" >
                 <Form.Group className="mb-3 form-style" controlId="formBasicEmail">
                     <Form.Control type="username" placeholder="Enter username"  name="username" value={formUsername} onChange={e => setFormUsername(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3 form-style" controlId="formBasicPassword">
                     <Form.Control type="password" placeholder="Password" name="password" value={formPassword} onChange={e => setFormPassword(e.target.value)}  />
                 </Form.Group>
-                <Button className="common-btn mb-3" style={{width: "350px", height: "50px", borderRadius: "30px", fontSize: "22px"}} type="submit" >
-                    Login <p>{dateJoined}</p>
-                </Button>
-               
+                    <Button className="common-btn mb-3" style={{width: "350px", height: "50px", borderRadius: "30px", fontSize: "22px"}} onClick={submitHandler} >
+                     Login 
+                   </Button>
                 <Link to="/login/create-account">
-                    <Button className="common-btn" style={{width: "350px", height: "50px", borderRadius: "30px", fontSize: "22px"}}>
+                    <Button className="common-btn mb-3" style={{width: "350px", height: "50px", borderRadius: "30px", fontSize: "22px"}} >
                         Create Account
                     </Button>
                 </Link>
+                  <Link to="/login/account/reset/">
+                <Button className="common-btn mb-3" style={{width: "350px", height: "50px", borderRadius: "30px", fontSize: "22px"}} >
+                        Password reset
+                 </Button>
+                 </Link>
             </Form>
         </Container>
         :  null }
