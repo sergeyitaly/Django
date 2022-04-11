@@ -1,11 +1,16 @@
 from datetime import timedelta
 import datetime
+from email.policy import default
 
 from pathlib import Path
 
 from django.conf import settings
 
 import os
+import dj_database_url
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update[db_from_env]
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-p4w8(5lrqeh5z6i(@m40+!+vbp5so&-p6h2oy3a+x#6mq&mvzv'
@@ -180,7 +185,7 @@ STATICFILES_DIRS = [
   # Tell Django where to look for React's static files (css, js)
   os.path.join(REACT_APP_DIR, "static/frontend")
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 WHITENOISE_INDEX_FILE = True
