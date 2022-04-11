@@ -1,17 +1,21 @@
 from datetime import timedelta
 import datetime
-import os
+
 from pathlib import Path
 
 from django.conf import settings
 
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
-CART_SESSION_ID = 'cart'
+
 SECRET_KEY = 'django-insecure-p4w8(5lrqeh5z6i(@m40+!+vbp5so&-p6h2oy3a+x#6mq&mvzv'
-SITE_NAME = "Leather-Shop"
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 ALLOWED_HOSTS = ['*']
+SITE_NAME = "Leather-Shop"
+CART_SESSION_ID = 'cart'
+# SECURITY WARNING: don't run with debug turned on in production!
+
 INSTALLED_APPS = [
     'admin_interface',
     'colorfield',

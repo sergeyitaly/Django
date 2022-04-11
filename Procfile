@@ -1,0 +1,1 @@
+web: gunicorn Leathershop.wsgi --log-file -
