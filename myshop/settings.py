@@ -7,10 +7,9 @@ from pathlib import Path
 from django.conf import settings
 
 import os
-import dj_database_url
+#import dj_database_url
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update[db_from_env]
+#db_from_env = dj_database_url.config()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-p4w8(5lrqeh5z6i(@m40+!+vbp5so&-p6h2oy3a+x#6mq&mvzv'
