@@ -1,9 +1,11 @@
 *.log
 *.pot
 *.pyc
-build
+build/
 frontend/build
 
+#Mac
+.DS_Store
 # don't track virtualenv, ever!
 venv/
 

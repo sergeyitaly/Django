@@ -1,1 +1,1 @@
-web: gunicorn Leathershop.wsgi --log-file -
+web: gunicorn Django.wsgi --log-file -
