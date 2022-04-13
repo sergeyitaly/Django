@@ -7,14 +7,19 @@ from pathlib import Path
 from django.conf import settings
 
 import os
-import dj_database_url
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+#import dj_database_url
+
+#db_from_env = dj_database_url.config()
+#DATABASES['default'].update(db_from_env)
+#DATABASES = { 'default': dj_database_url.config() }
+#DATABASES = { 'default': dj_database_url.config(conn_max_age=500) }
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 SECRET_KEY = 'django-insecure-p4w8(5lrqeh5z6i(@m40+!+vbp5so&-p6h2oy3a+x#6mq&mvzv'
-
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 SITE_NAME = "Leather-Shop"
@@ -188,6 +193,9 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+
 WHITENOISE_INDEX_FILE = True
 WHITENOISE_ROOT = os.path.join(STATIC_ROOT, 'root')
 
