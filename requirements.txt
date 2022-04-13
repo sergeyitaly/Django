@@ -54,3 +54,4 @@ urllib3==1.26.9
 virtualenv==20.14.1
 virtualenv-clone==0.5.7
 whitenoise==6.0.0
+psycopg2==2.6.2
